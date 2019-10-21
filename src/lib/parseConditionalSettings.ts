@@ -16,7 +16,7 @@ import * as vscode from 'vscode';
 import {spawn} from 'child_process';
 
 export enum Section {
-    conditionalConfig = 'conditionConfig'
+    conditionalConfig = 'conditionalConfig'
 }
 
 export interface Conditions {

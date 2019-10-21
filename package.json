@@ -16,12 +16,12 @@
 	"contributes": {
 		"configuration": {
 			"properties": {
-				"conditionConfig.isDisabled": {
+				"conditionalConfig.isDisabled": {
 					"type": "boolean",
 					"default": false,
 					"description": "whether to enable/disable the extension."
 				},
-				"conditionConfig.configs": {
+				"conditionalConfig.configs": {
 					"type": "array",
 					"default": [],
 					"items": {
