@@ -1,0 +1,77 @@
+{
+	"name": "conditional-settings",
+	"displayName": "conditional-settings",
+	"description": "A small extension to set different settings based on conditions",
+	"version": "0.0.1",
+	"engines": {
+		"vscode": "^1.39.0"
+	},
+	"categories": [
+		"Other"
+	],
+	"activationEvents": [
+		"*"
+	],
+	"main": "./out/extension.js",
+	"contributes": {
+		"configuration": {
+			"properties": {
+				"conditionConfig.isDisabled": {
+					"type": "boolean",
+					"default": false,
+					"description": "whether to enable/disable the extension."
+				},
+				"conditionConfig.configs": {
+					"type": "array",
+					"default": [],
+					"items": {
+						"type": "object",
+						"properties": {
+							"conditions": {
+								"type": "object",
+								"properties": {
+									"hasFile": {
+										"type": "string",
+										"description": "Filename to check whether it exists in workspace or not."
+									},
+									"always": {
+										"type": "boolean",
+										"description": "Enable the settings always regardless of other conditions."
+									}
+								},
+								"description": "Conditions based on what settings needs to be changed."
+							},
+							"settingsToChange": {
+								"type": "object",
+								"description": "Workspace settings that needs to be modified based on conditions."
+							},
+							"runShellCommand": {
+								"type": "array",
+								"description": "Shell command to be executed, these arguments will be passed to child_process.spawn, so same signature can be followed here to values."
+							}
+						}
+					},
+					"description": "A set of conditions and configs to be changed."
+				}
+			}
+		}
+	},
+	"scripts": {
+		"vscode:prepublish": "npm run compile",
+		"compile": "tsc -p ./",
+		"watch": "tsc -watch -p ./",
+		"pretest": "npm run compile",
+		"test": "node ./out/test/runTest.js"
+	},
+	"devDependencies": {
+		"@types/glob": "^7.1.1",
+		"@types/mocha": "^5.2.6",
+		"@types/node": "^10.12.21",
+		"@types/vscode": "^1.39.0",
+		"glob": "^7.1.4",
+		"mocha": "^6.1.4",
+		"typescript": "^3.3.1",
+		"tslint": "^5.12.1",
+		"vscode-test": "^1.2.0"
+	}
+}
