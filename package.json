@@ -2,7 +2,7 @@
 	"name": "conditional-settings",
 	"displayName": "conditional-settings",
 	"description": "A small extension to set different settings based on conditions",
-	"version": "0.0.1",
+	"version": "0.1.0",
 	"engines": {
 		"vscode": "^1.39.0"
 	},
